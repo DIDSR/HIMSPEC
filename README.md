@@ -4,14 +4,14 @@ This code was developed to read the hyperspectral transmittance data measured by
 
 | Tissue Name | Id | Serial | Position |
 | :--- | :--- | :---: | :---: |
-| Bladder | BL2082 | 066 | [M13](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BladderTMAmap.png) |
-| Brain | CNS801 | 084 | [H10](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BrainTMAmap.png) |
-| Breast | BR963c | A011 | [A1](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BreastTMAmap.png) |
-| Colon | BC05002a | A022 | [H6](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/ColonTMAmap.png) |
-| Kidney | BC07001 | C076 | [H7](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/KidneyTMAmap.png) |
-| Liver | BC03002 | G136 | [H9](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/LiverTMAmap.png) |
-| Lung | BC04002 | K166 | [J7](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/LungTMAmap.png) |
-| Uterine Cervix | CR602 | 110 | [B10](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/UterineCervixTMAmap.png) |
+| [Bladder](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_Bladder_M13/RGB/truth.tif)| BL2082 | 066 | [M13](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BladderTMAmap.png) |
+| [Brain](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_Brain_H10/RGB/truth.tif) | CNS801 | 084 | [H10](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BrainTMAmap.png) |
+| [Breast](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_Breast_A1/RGB/truth.tif) | BR963c | A011 | [A1](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BreastTMAmap.png) |
+| [Colon](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_Colon_H6/RGB/truth.tif) | BC05002a | A022 | [H6](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/ColonTMAmap.png) |
+| [Kidney](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_Kidney_H7/RGB/truth.tif) | BC07001 | C076 | [H7](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/KidneyTMAmap.png) |
+| [Liver](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_Liver_H9/RGB/truth.tif) | BC03002 | G136 | [H9](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/LiverTMAmap.png) |
+| [Lung](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_Lung_J7/RGB/truth.tif) | BC04002 | K166 | [J7](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/LungTMAmap.png) |
+| [Uterine Cervix](https://github.com/DIDSR/HIMSPEC/tree/master/output/BiomaxOrgan10_UterineCervix_B10/RGB/truth.tif) | CR602 | 110 | [B10](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/UterineCervixTMAmap.png) |
 
 The code outputs the CIE1931 XYZ and CIE1976 L\*a\*b\* coordinates and their covariance matrices. It also outputs the sRGB coordinates of the image.
 
