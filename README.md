@@ -35,7 +35,7 @@ The outputs for each pixel in the image are:
 - The covariance matrix on the CIEL\*a\*b\* coordinates
 - The sRGB coordinates
 
-The input data are provided for each of the 8 selected tissues in the `input/\<Tissue Name\>/Transmittance` subfolder. For the example presented here: [input/UterineCervix_red/Transmittance](https://github.com/DIDSR/HIMS-dataset-reader/tree/master/input/UterineCervix_red/Transmittance)
+The input data are provided for each of the 8 selected tissues in the `input/\<Tissue Name\>/Transmittance` subfolder. For the example presented here: [input/UterineCervix_red/Transmittance](https://github.com/DIDSR/HIMSPEC/tree/master/input/UterineCervix_red/Transmittance)
 
 The CIEXYZ coordinates of the reference white and the color coordinates (CIEXYZ, CIEYxy and CIEL\*a\*b\*) resulting from the transmittance measurements are displayed for a selection of pixels locations corresponding to superficial cells (X = 266; Y = 52), basal cells (X = 337; Y = 266) and stroma (X = 416; Y = 319). A tiff image is obtained by reshaping the sRGB coordinates:
 
@@ -55,7 +55,7 @@ The color of these plots can follow the color order from Matlab or the sRGB colo
   <img src="readme_images/scatter3_with_caption.png">
 </p>
 
-The output CIE coordinates (CIEXYZ, CIEL\*a\*b\* and the respective covariance results) are saved in the [output/UterineCervix_red/CIE_Coord](https://github.com/DIDSR/HIMS-dataset-reader/tree/master/output/UterineCervix_red/CIE_Coord) subfolder. The sRGB color coordinates and tiff image are saved in the [output/UterineCervix_red/RGB](https://github.com/DIDSR/HIMS-dataset-reader/tree/master/output/UterineCervix_red/RGB) subfolder.
+The output CIE coordinates (CIEXYZ, CIEL\*a\*b\* and the respective covariance results) are saved in the [output/UterineCervix_red/CIE_Coord](https://github.com/DIDSR/HIMSPEC/tree/master/output/UterineCervix_red/CIE_Coord) subfolder. The sRGB color coordinates and tiff image are saved in the [output/UterineCervix_red/RGB](https://github.com/DIDSR/HIMSPEC/tree/master/output/UterineCervix_red/RGB) subfolder.
 
 ## US BiomaxOrgan10 dataset
 For each tissue slide, the data is composed of 41 subfiles for the mean and 41 subfiles for the standard deviation of the transmittace data, i.e. one subfile for each measurement wavelength. These are stacked together to produce 2 datafiles, `transmittance_mean_camera.mat` and the `transmittance_std_camera.mat`, that can be read by the code presented in the `ExampleCode.m` file. For that purpose, line 35 of `ExampleCode.m`, the `sample_name` variable must point to the proper tissue data folder name:
