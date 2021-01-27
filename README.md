@@ -4,7 +4,7 @@ This code was developed to read the hyperspectral transmittance data measured by
 
 | Tissue Name | Id | Serial | Position |
 | :--- | :--- | :---: | :---: |
-| [Bladder](https://github.com/DIDSR/HIMSPEC/tree/master/rgb_images/BiomaxOrgan10_Bladder_M13.tif)| BL2082 | 066 | [M13](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BladderTMAmap.png) |
+| [Bladder](https://github.com/DIDSR/HIMSPEC/tree/master/rgb_images/BiomaxOrgan10_Bladder_M13.png)| BL2082 | 066 | [M13](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BladderTMAmap.png) |
 | [Brain](https://github.com/DIDSR/HIMSPEC/tree/master/rgb_images/BiomaxOrgan10_Bladder_M13.tif) | CNS801 | 084 | [H10](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BrainTMAmap.png) |
 | [Breast](https://github.com/DIDSR/HIMSPEC/tree/master/rgb_images/BiomaxOrgan10_Bladder_M13.tif) | BR963c | A011 | [A1](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/BreastTMAmap.png) |
 | [Colon](https://github.com/DIDSR/HIMSPEC/tree/master/rgb_images/BiomaxOrgan10_Bladder_M13.tif) | BC05002a | A022 | [H6](https://github.com/DIDSR/HIMSPEC/tree/master/tma_mapping_images/ColonTMAmap.png) |
