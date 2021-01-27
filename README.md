@@ -4,7 +4,7 @@ This code was developed to read the hyperspectral transmittance data measured by
 
 | Tissue Name | Id | Serial | Position |
 | :--- | :--- | :---: | :---: |
-| Bladder | BL2082 | 066 | [M13](https://github.com/DIDSR/HIMS-dataset-reader/tree/master/tma_mapping_images/Bladder_TMA_map.PNG) |
+| Bladder | BL2082 | 066 | [M13](https://github.com/DIDSR/HIMS-dataset-reader/tree/master/tma_mapping_images/BladderTMAmap.png) |
 | Brain | CNS801 | 084 | H10 |
 | Breast | BR963c | A011 | A1 |
 | Colon | BC05002a | A022 | H6 |
