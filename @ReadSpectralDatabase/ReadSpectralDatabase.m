@@ -8,7 +8,7 @@ classdef ReadSpectralDatabase < handle
     % Sample
     properties
         biomax_path             % Path to BiomaxOrgan10 data
-        sample                  % Name of BiomaxOrgan10 the sample
+        sample                  % Name of BiomaxOrgan10 sample
     end
     % Images properties
     properties
