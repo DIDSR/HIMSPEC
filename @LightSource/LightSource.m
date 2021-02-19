@@ -28,9 +28,8 @@ classdef LightSource < handle
         function obj = load_data(obj)
             %load_data
             % Load the data defined by ls_path
-            
             load (obj.ls_path, 'spec');
-            obj.ls = spec(1:10:401,2);
+            obj.ls = spec(1:10:391,2); % 380 to 770 nm
         end
         
     end

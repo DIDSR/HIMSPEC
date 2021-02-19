@@ -14,7 +14,7 @@ classdef ReadSpectralDatabase < handle
     properties
         sizex                   % Number of columns in the image
         sizey                   % Number of rows in the imag
-        lambda = 380:10:780     % 380 nm to 780 nm in steps of 10 nm
+        lambda = 380:10:770     % 380 nm to 770 nm in steps of 10 nm
         sig_m                   % Mean values of the transmittance
         sig_s                   % Standard deviation values of the transmittance
     end
@@ -112,11 +112,11 @@ classdef ReadSpectralDatabase < handle
                 switch i
                     case 1
                         disp('Stack transmittance mean values into one file...')
-                        trans_array_m = reshape(out, 41, sizey * sizex); 
+                        trans_array_m = reshape(out, sizeLambda, sizey * sizex); 
                         save([path 'trans_mean_camera.mat'], 'trans_array_m', 'sizey', 'sizex', '-v7.3');
                     case 2
                         disp('Stack transmittance standard devation values into one file...')
-                        trans_array_s = reshape(out, 41, sizey * sizex);
+                        trans_array_s = reshape(out, sizeLambda, sizey * sizex);
                         save([path 'trans_std_camera.mat'], 'trans_array_s', 'sizey', 'sizex', '-v7.3');
                 end
             end
@@ -125,7 +125,7 @@ classdef ReadSpectralDatabase < handle
         %% CIE coordinates and covariance matrices 
         function col_match_f(obj)
             %col_match_f
-            % Color matching functions xbar, ybar, zbar from 380 nm to 780
+            % Color matching functions xbar, ybar, zbar from 380 nm to 770
             % nm in steps of 10 nm
             obj.cmf = [
                 380.0 0.001368 0.000039 0.006450;
@@ -168,7 +168,6 @@ classdef ReadSpectralDatabase < handle
                 750.0 0.000332 0.000120 0.000000;
                 760.0 0.000166 0.000060 0.000000;
                 770.0 0.000083 0.000030 0.000000;
-                780.0 0.000042 0.000015 0.000000;
                 ];
         end
         
@@ -179,10 +178,10 @@ classdef ReadSpectralDatabase < handle
             % Color matching functions
             obj.col_match_f;
             
-            input_n = size(obj.sig_m,2); % Number of pixel in image
-            x_bar = repmat(obj.cmf(: ,2),1,input_n);
-            y_bar = repmat(obj.cmf(: ,3),1,input_n);
-            z_bar = repmat(obj.cmf(: ,4),1,input_n);
+            input_n = size(obj.sig_m, 2); % Number of pixel in image
+            x_bar = repmat(obj.cmf(: ,2), 1, input_n);
+            y_bar = repmat(obj.cmf(: ,3), 1, input_n);
+            z_bar = repmat(obj.cmf(: ,4), 1, input_n);
             
             % XYZ coordinates
             k = 100/sum(obj.cmf(: ,3).*ls(:, 1)); % Normalization factor
@@ -383,10 +382,8 @@ classdef ReadSpectralDatabase < handle
             xy(:, 2) = obj.XYZ(:, 2)./sum(obj.XYZ, 2);
         end
         
-        function transmittance2XYZ(obj, trim)
-            %transmittance2XYZ
-            % [mean(T), stddev(T)] -> [XYZ, CovXYZ]
-            
+        function trimTransmittance(obj, trim)
+            %trimTransmittance
             % Set the max input T to 1 and proportionaly scales the uncertainty (multiplicative noise assumption)
             switch trim
                 case 'y'
@@ -401,9 +398,17 @@ classdef ReadSpectralDatabase < handle
                         obj.sig_s(mask_trim) = ratio;
                     end
                     obj.sig_m = tmp;
-                case'n'
+                case 'n'
                     disp('No trimming of transmittance values');
             end
+        end
+        
+        function transmittance2XYZ(obj, trim)
+            %transmittance2XYZ
+            % [mean(T), stddev(T)] -> [XYZ, CovXYZ]
+            
+            % Trim transmittance values to max 1
+            obj.trimTransmittance(trim);
             
             ls_array = repmat(obj.ls, 1, size(obj.sig_m, 2));
             
@@ -526,7 +531,7 @@ classdef ReadSpectralDatabase < handle
                     end
                 case 'colororder'
             end
-            xlim([380 780]); ylim([0 1.5]);
+            xlim([380 770]); ylim([0 1.5]);
             xlabel('Wavelength ({\lambda})');
             ylabel('Transmittance (A.U.)');
         end
@@ -567,7 +572,7 @@ classdef ReadSpectralDatabase < handle
                 end
                 hold on;
             end
-            xlim([380 780]); ylim([0 1.5]);
+            xlim([380 770]); ylim([0 1.5]);
             xlabel('Wavelength ({\lambda})');
             ylabel('Transmittance (A.U.)');
         end

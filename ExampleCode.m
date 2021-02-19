@@ -32,7 +32,8 @@ close all;
 biomax_path = pwd;
 
 % Name of the sample
-sample_name = 'UterineCervix_red';
+% sample_name = 'UterineCervix_red';
+sample_name = 'BiomaxOrgan10_Bladder_M13';
 
 % Create ReadSpectralDataBase Object
 dt = ReadSpectralDatabase(biomax_path, sample_name);
@@ -42,7 +43,7 @@ d65 = LightSource([pwd '\input\DataIlluminants\spec_cied65']);
 dt.set_ls(d65.ls);
 
 %% Compute CIEXYZ coordinates
-dt.transmittance2XYZ('y') % 'y' to trim the transmittance to 1, can be > 1 in the measurements due to uncertainties
+dt.transmittance2XYZ('y') % 'y' to trim the transmittance to 1. The measured transmittance can be > 1 due to measurement uncertainties.
 
 %% Compute CIELAB coordinates
 dt.transmittance2LAB('y') % 'y' to trim the transmittance to 1
