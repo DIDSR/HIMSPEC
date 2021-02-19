@@ -68,7 +68,7 @@ classdef ReadSpectralDatabase < handle
             % Load sample files
             path = [obj.biomax_path '\input\' obj.sample '\Transmittance\'];
             
-            % Stack the 41 files into one file, one or transmittance mean values and
+            % Stack the 40 files into one file, one or transmittance mean values and
             % one for transmittance standard deviations
             if(~(isfile([path 'trans_mean_camera.mat']) && isfile([path 'trans_std_camera.mat'])))
                 obj.stacker(path);
@@ -92,7 +92,7 @@ classdef ReadSpectralDatabase < handle
         function obj = stacker(obj, path)
             %stacker
             % Stacks the transmittance data for each wavelength
-            % into a 41 x (sizex x sizey) dataset
+            % into a 40 x (sizex x sizey) dataset
             
             outputName = {'trans_mean_camera', 'trans_std_camera'};
             sizeLambda = size(obj.lambda, 2);

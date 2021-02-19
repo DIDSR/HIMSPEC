@@ -15,8 +15,8 @@
 % - Uterine Cervix
 
 % input = 
-%   - transmittance:                                    41 x (sizey*sizex) array
-%   - standard deviation on transmittance:              41 x (sizey*sizex) array
+%   - transmittance:                                    40 x (sizey*sizex) array
+%   - standard deviation on transmittance:              40 x (sizey*sizex) array
 % output = 
 %   - CIEXYZ: CIE 1931 tri-stimulus coordinates         (sizey*sizex) x 3 array
 %   - CovXYZ: Covariance matrix on XYZ coordinates      3 x 3 x (sizey*sizex) array
