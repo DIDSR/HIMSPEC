@@ -14,7 +14,7 @@ classdef ReadSpectralDatabase < handle
     properties
         sizex                   % Number of columns in the image
         sizey                   % Number of rows in the imag
-        lambda = 380:10:770     % 380 nm to 770 nm in steps of 10 nm
+        lambda = 390:10:770     % 390 nm to 770 nm in steps of 10 nm
         sig_m                   % Mean values of the transmittance
         sig_s                   % Standard deviation values of the transmittance
     end
@@ -68,7 +68,7 @@ classdef ReadSpectralDatabase < handle
             % Load sample files
             path = [obj.biomax_path '\input\' obj.sample '\Transmittance\'];
             
-            % Stack the 40 files into one file, one or transmittance mean values and
+            % Stack the 39 files into one file, one or transmittance mean values and
             % one for transmittance standard deviations
             if(~(isfile([path 'trans_mean_camera.mat']) && isfile([path 'trans_std_camera.mat'])))
                 obj.stacker(path);
@@ -92,19 +92,19 @@ classdef ReadSpectralDatabase < handle
         function obj = stacker(obj, path)
             %stacker
             % Stacks the transmittance data for each wavelength
-            % into a 40 x (sizex x sizey) dataset
+            % into a 39 x (sizex x sizey) dataset
             
             outputName = {'trans_mean_camera', 'trans_std_camera'};
             sizeLambda = size(obj.lambda, 2);
             
             % Load sizex and size y for size of out array
-            loadName = insertBefore([path outputName{1} '.mat'], '.mat', '_1');
+            loadName = insertBefore([path outputName{1} '.mat'], '.mat', '_2');
             load(loadName, 'sizex', 'sizey');
 
             for i=1:2
                 out = zeros(sizeLambda, sizey, sizex); 
                 for wl = 1:sizeLambda
-                    loadName = insertBefore([path outputName{i} '.mat'], '.mat', ['_' int2str(wl)]);
+                    loadName = insertBefore([path outputName{i} '.mat'], '.mat', ['_' int2str(wl+1)]); % trans_xx_camera_2 = 390 nm, trans_xx_camera_40 = 770 nm
                     temp = load(loadName);
                     out(wl, :, :) = temp.vv;
                 end
@@ -125,10 +125,9 @@ classdef ReadSpectralDatabase < handle
         %% CIE coordinates and covariance matrices 
         function col_match_f(obj)
             %col_match_f
-            % Color matching functions xbar, ybar, zbar from 380 nm to 770
+            % Color matching functions xbar, ybar, zbar from 390 nm to 770
             % nm in steps of 10 nm
             obj.cmf = [
-                380.0 0.001368 0.000039 0.006450;
                 390.0 0.004243 0.000120 0.020050;
                 400.0 0.014310 0.000396 0.067850;
                 410.0 0.043510 0.001210 0.207400;
@@ -531,7 +530,7 @@ classdef ReadSpectralDatabase < handle
                     end
                 case 'colororder'
             end
-            xlim([380 770]); ylim([0 1.5]);
+            xlim([390 770]); ylim([0 1.5]);
             xlabel('Wavelength ({\lambda})');
             ylabel('Transmittance (A.U.)');
         end
@@ -572,7 +571,7 @@ classdef ReadSpectralDatabase < handle
                 end
                 hold on;
             end
-            xlim([380 770]); ylim([0 1.5]);
+            xlim([390 770]); ylim([0 1.5]);
             xlabel('Wavelength ({\lambda})');
             ylabel('Transmittance (A.U.)');
         end

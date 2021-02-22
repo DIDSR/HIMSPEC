@@ -15,8 +15,8 @@
 % - Uterine Cervix
 
 % input = 
-%   - transmittance:                                    40 x (sizey*sizex) array
-%   - standard deviation on transmittance:              40 x (sizey*sizex) array
+%   - transmittance:                                    39 x (sizey*sizex) array
+%   - standard deviation on transmittance:              39 x (sizey*sizex) array
 % output = 
 %   - CIEXYZ: CIE 1931 tri-stimulus coordinates         (sizey*sizex) x 3 array
 %   - CovXYZ: Covariance matrix on XYZ coordinates      3 x 3 x (sizey*sizex) array
@@ -33,7 +33,7 @@ biomax_path = pwd;
 
 % Name of the sample
 % sample_name = 'UterineCervix_red';
-sample_name = 'BiomaxOrgan10_Bladder_M13';
+sample_name = 'BiomaxOrgan10_UterineCervix_B10';
 
 % Create ReadSpectralDataBase Object
 dt = ReadSpectralDatabase(biomax_path, sample_name);
