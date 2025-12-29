@@ -3,14 +3,16 @@
   ![Overview](./figures/aim3_overview.png)
 ## Input
   - scanned image from item I
-  - reference from item III
+  - reference from item II
 ## Output
   - color coordinates in the CIELAB space
   - specific RGB or HSI color ratios as target acceptance criteria
 # Software Requirement Specification 
-  - SRS 100: Compare device output with reference in the CIELAB color space
-  - SRS 200: Convert device output image to CIELAB
-  - SRS 300: Convert reference spectrum to CIELAB
+  - SRS 3100: Compare device output with reference in the CIELAB color space
+  - SRS 3200: Convert device output image to CIELAB
+  - SRS 3300: Convert reference spectrum to CIELAB
+  - SRS 4100: Define a class for describing various color test target slides (e.g., Sierra)
+  - SRS 2100: Define a class for exchanging spectra from different instruments/sources (e.g., Applied Image)
 # System and Software Architecture Diagram
 ``` mermaid
 flowchart LR
@@ -28,7 +30,7 @@ flowchart LR
 
   A[Scanner under test]
   D[DICOM/ICC_reader]
-  T[Test target]
+  T@{ shape: lean-r, label: "Test target" }
   M[Measurement system]
 
   T --> A
@@ -48,8 +50,8 @@ flowchart LR
 ```
 
 # Software Design Specification
-  - SDS 100: A class for implementing SRS 100
-  - SDS 200: A class for implementing SRS 200
-  - SDS 300: A class for implementing SRS 300
+  - SDS 3100: A function for implementing SRS 3100
+  - SDS 3200: A function for implementing SRS 3200
+  - SDS 3300: A function for implementing SRS 3300
   
 # V&V
