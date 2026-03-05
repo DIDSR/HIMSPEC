@@ -1,4 +1,5 @@
 # A Spectral Database Collected with a Hyperspectral Imaging Microscopy System (HIMS)
+3/5/2026
 
 This code was developed to read the hyperspectral transmittance data measured by DIDSR's Hyperspectral Imaging Microscope (HIMS) for a selection of 8 BiomaxOrgan10 tissue microarray slides (US Biomax, 15883 Crabbs Branch Way, MD 20855, USA):
 
